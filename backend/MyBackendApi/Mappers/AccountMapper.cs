@@ -34,7 +34,7 @@ namespace MyBackendApi.Mappers
             */
         }
 
-        public static AccountUpdateDto UpdateToDto(this UserAccount model)
+        public static AccountUpdateDto ToUpdateDto(this UserAccount model)
         {
             return new AccountUpdateDto
             {
@@ -42,6 +42,19 @@ namespace MyBackendApi.Mappers
                 IsArchived = model.IsArchived
             };
         }
+        public static UserAccount ToUpdateModel(this AccountUpdateDto dto, int id)
+        {
+            return new UserAccount
+            {
+                Id = id,
+                Nickname = dto.Nickname,
+                IsArchived = dto.IsArchived
+            };
+        }
+
+
+
+        
         /* Methods to be created :
         1. Creation
         2. Admin Account Access

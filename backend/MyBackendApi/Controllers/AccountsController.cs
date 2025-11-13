@@ -54,12 +54,47 @@ namespace MyBackendApi.Controllers
                 if (accounts == null)
                 {
                     _logger.LogWarning("No Accounts found");
-                    return NotFound(); // return a 404 for null
-                } 
+                    return NotFound("No accounts found"); // return a 404 for null
+                }
 
                 return Ok(accounts);
-            }catch (Exception ex){
-                return StatusCode(500, $"Internal Server error with mesage : {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning($"Error Retreiving all accounts with message: {ex.Message}");
+                return StatusCode(500, "Internal Server error"); // dont send ex info to api caller
+            }
+        }
+        [HttpPut("archive/{id}")]
+        public async Task<ActionResult> ArchiveUserAccount(int id)
+        {
+            try
+            {
+                var result = await _service.ArchiveUserAccountAsync(id);
+                return Ok(result);
+            }catch(Exception ex)
+            {
+                _logger.LogWarning($"Error archiving user account with user_id : {id} and message {ex.Message}");
+                return StatusCode(500, $"Internal Server Error");
+            }
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<AccountUpdateDto>> UpdateUserAccount(int id,[FromBody] AccountUpdateDto data)
+        {
+            try
+            {
+                var result = await _service.UpdateUserAccountAsync(id, data);
+                if (result == null)
+                {
+                    _logger.LogWarning("No Account found, error with user update");
+                    return NotFound("No account found");  
+                } 
+                return Ok(result);
+            }catch(Exception ex)
+            {
+                _logger.LogWarning($"Error updating user account information with message {ex.Message}");
+                return StatusCode(500, $"Whoops, Internal Server Error");
             }
         }
     }
