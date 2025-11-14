@@ -609,11 +609,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mferl\\OneDrive\\Documents\\myproject\\myproject\\backend\\MyBackendApi\\MyBackendApi.csproj",
+      "projectUniqueName": "C:\\Users\\mferl\\MyPersonalProject\\myproject\\backend\\MyBackendApi\\MyBackendApi.csproj",
       "projectName": "MyBackendApi",
-      "projectPath": "C:\\Users\\mferl\\OneDrive\\Documents\\myproject\\myproject\\backend\\MyBackendApi\\MyBackendApi.csproj",
+      "projectPath": "C:\\Users\\mferl\\MyPersonalProject\\myproject\\backend\\MyBackendApi\\MyBackendApi.csproj",
       "packagesPath": "C:\\Users\\mferl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mferl\\OneDrive\\Documents\\myproject\\myproject\\backend\\MyBackendApi\\obj\\",
+      "outputPath": "C:\\Users\\mferl\\MyPersonalProject\\myproject\\backend\\MyBackendApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mferl\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -639,8 +639,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -670,24 +669,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.12, 8.0.12]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[8.0.12, 8.0.12]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.12, 8.0.12]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.12, 8.0.12]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -696,7 +677,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
